@@ -14,7 +14,6 @@ firefox_options = FirefoxOptions()
 chrome_browser = webdriver.Chrome(options=chrome_options)
 firefox_browser = webdriver.Firefox(options=firefox_options)
 browsers = [('Chrome', chrome_browser), ('Firefox', firefox_browser)]
-browsers = [('Chrome', chrome_browser)]
 url = "https://dev.baps.dev/mis/"
 
 for browser_name, browser in browsers:

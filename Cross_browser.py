@@ -1,4 +1,6 @@
 
+from selenium import webdriver
+
 chrome_browser = webdriver.Chrome()
 fire_browser = webdriver.Firefox()
 edge_browser = webdriver.Edge()

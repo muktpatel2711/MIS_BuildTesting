@@ -1,6 +1,3 @@
-from selenium import webdriver
-import selenium
-
 
 chrome_browser = webdriver.Chrome()
 fire_browser = webdriver.Firefox()

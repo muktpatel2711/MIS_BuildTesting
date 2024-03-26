@@ -1,6 +1,6 @@
 from selenium import webdriver
 import selenium
-from pages import serachPerseon_page
+
 
 chrome_browser = webdriver.Chrome()
 fire_browser = webdriver.Firefox()

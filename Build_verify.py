@@ -10,9 +10,11 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 chrome_options.add_argument('--disable-gpu')
 firefox_options = FirefoxOptions()
 firefox_options.headless = True
+
 chrome_browser = webdriver.Chrome(options=chrome_options)
 firefox_browser = webdriver.Firefox(options=firefox_options)
-browsers = [('Chrome', chrome_browser), ('Firefox', firefox_browser)]
+#browsers = [('Chrome', chrome_browser), ('Firefox', firefox_browser)]
+browsers = [('Chrome', chrome_browser)]
 url = "https://dev.baps.dev/mis/"
 
 for browser_name, browser in browsers:

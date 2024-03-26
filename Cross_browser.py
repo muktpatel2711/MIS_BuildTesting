@@ -1,4 +1,5 @@
 from selenium import webdriver
+import selenium
 from pages import serachPerseon_page
 
 chrome_browser = webdriver.Chrome()
@@ -11,5 +12,3 @@ url = "https://dev.baps.dev/mis/"
 
 for browser in browsers:
     browser.get(url)
-
-    browser.quit()

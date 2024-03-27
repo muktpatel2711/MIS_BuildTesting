@@ -20,6 +20,8 @@ url = "https://dev.baps.dev/mis/"
 for browser_name, browser in browsers:
     browser.get(url)
     print(f"Successfully navigated to {url} in {browser_name} browser")
+    chrome_browser.save_screenshot("screenshot.png")
+    print("Screenshot saved successfully.")
 
 
 for _, browser in browsers:

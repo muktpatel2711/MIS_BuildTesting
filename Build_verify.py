@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 # Chrome options for headless mode
@@ -22,6 +23,8 @@ for browser_name, browser in browsers:
     print(f"Successfully navigated to {url} in {browser_name} browser")
     chrome_browser.save_screenshot("screenshot.png")
     print("Screenshot saved successfully.")
+    browser.find_element(By.XPATH,"//input[@class='login-btn']").click()
+
 
 
 for _, browser in browsers:

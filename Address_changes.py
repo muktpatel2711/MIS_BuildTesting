@@ -1,4 +1,4 @@
-# login_page.py
+
 import time
 
 from selenium import webdriver

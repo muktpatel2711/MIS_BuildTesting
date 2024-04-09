@@ -4,7 +4,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
-from utils import config
 from selenium.webdriver.common.action_chains import ActionChains
 
 

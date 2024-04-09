@@ -9,8 +9,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class TestLoginPage:
     def __init__(self):
-        if config.browser == "Chrome":
-            self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome()
     def url(self):
         self.driver.get("http://bapsausmisadminwebapp.dev.kcspl.in:9090/")
         self.driver.maximize_window()

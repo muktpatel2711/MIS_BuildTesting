@@ -11,17 +11,17 @@ class TestLoginPage:
     def __init__(self):
         self.driver = webdriver.Chrome()
     def url(self):
-        self.driver.get("http://bapsausmisadminwebapp.dev.kcspl.in:9090/")
+        self.driver.get("https://dev.baps.dev/mis/")
         self.driver.maximize_window()
-        self.driver.implicitly_wait(25)
+        self.driver.implicitly_wait(20)
 
 
     def sso(self):
         self.driver.find_element(By.NAME,"submit").click()
 
     def login(self):
-        self.driver.find_element(By.NAME,"userName").send_keys("mihir")
-        self.driver.find_element(By.NAME, "password").send_keys("Test@123")
+        self.driver.find_element(By.NAME,"userName").send_keys("contactvpatel@gmail.com")
+        self.driver.find_element(By.NAME, "password").send_keys("Baps@123")
         self.driver.find_element(By.XPATH, "//button[@class='btn btn-primary btn-submit']").click()
 
     def position(self):
@@ -52,24 +52,16 @@ class TestLoginPage:
         self.driver.find_element(By.XPATH,"//button[text()='Generate Link']").click()
 
     def address_form(self):
-        try:
-            expiredDate = self.driver.find_element(By.XPATH,"//input[@ formcontrolname='expiryDate']")
-            e_text = expiredDate.get_attribute("XPATH")
-            print(e_text)
-            date = self.driver.find_element(By.XPATH,"(//button[@class='mat-icon-button mat-button-base'])[2]")
-            date.click()
-            select_date = self.driver.find_element(By.XPATH,"//div[text()='18']")
-            select_date.click()
-        except:
-            print("Expired date already set")
-        try:
-            resend = self.driver.find_element(By.XPATH,"//button[text()='Resend']")
+        resend = self.driver.find_element(By.XPATH, "//button[text()='Resend']")
+        text = resend.get_attribute("XPATH")
+        if text== None:
             resend.click()
-            time.sleep(5)
-        except:
+        else:
             send = self.driver.find_element(By.XPATH, "//button[text()='Send']")
             send.click()
-            time.sleep(5)
+        time.sleep(5)
+
+
 
     def signIn(self):
         self.url()
@@ -80,15 +72,9 @@ class TestLoginPage:
         self.serachperson()
         self.AddressChanges()
         self.address_form()
-        self.take_screenshot()
-        self.tearDown()
-
-    def take_screenshot(self, filename="Successfully.png"):
-        self.driver.save_screenshot(filename)
 
     def tearDown(self):
         self.driver.quit()
 
 login = TestLoginPage()
 login.signIn()
-

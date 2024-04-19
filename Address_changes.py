@@ -71,6 +71,16 @@ class TestLoginPage:
             send.click()
             time.sleep(5)
 
+    def openEmail(self):
+        self.driver.get("https://yopmail.com/wm")
+        login_yopmail = self.driver.find_element(By.ID,"login")
+        login_yopmail.send_keys("vinsh105")
+        login_yopmail.send_keys(Keys.ENTER)
+        email_link = self.driver.find_element(By.XPATH,"//div[@class='ellipsis nw b f18']")
+        print(email_link.text)
+        self.driver.back()
+        time.sleep(5)
+
     def signIn(self):
         self.url()
         self.sso()
@@ -81,6 +91,7 @@ class TestLoginPage:
         self.AddressChanges()
         self.address_form()
         self.take_screenshot()
+        self.openEmail()
         self.tearDown()
 
     def take_screenshot(self, filename="Successfully.png"):
